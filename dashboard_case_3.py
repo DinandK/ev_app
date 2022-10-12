@@ -276,12 +276,11 @@ def display_opencharge_map():
 
 def display_charge_data():
     lp_user=lp_data
-    st.write("""#####  Hier de plot\'s""")
     see_data = st.expander('Orginele data 👇')
     with see_data:
         st.dataframe(data=lp_data)
     if st.sidebar.checkbox("Sliders menu🎚️"):
-      _id = st.sidebar.slider('Aantal elektrische voertuigen', 1 , 10188, 5000)
+      _id = st.sidebar.slider('Aantal laad sessie\'s', 1 , 10188, 5000)
       lp_user = lp_data[lp_data['slider_number'] <= _id]
       see_user_data = st.expander('Data na selectie👇')
       with see_user_data:
